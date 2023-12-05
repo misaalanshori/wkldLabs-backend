@@ -13,6 +13,8 @@ app.use(express.urlencoded({ extended: true }));
 const db = require('./app/models');
 db.sequelize.sync();
 
+app.use(cors());
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
